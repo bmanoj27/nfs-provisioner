@@ -1,0 +1,10 @@
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: static-nfs-storage
+provisioner: nfs-storage
+parameters:
+  archiveOnDelete: "true"
+  storage.storage_class_rwx: ''
+  storage.storage_class_rwo: ''
+reclaimPolicy: Retain

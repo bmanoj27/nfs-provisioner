@@ -1,0 +1,11 @@
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: dynamic-nfs-storage
+provisioner: nfs-storage
+parameters:
+  archiveOnDelete: "true"
+  storage.storage_class_rwx: 'true'
+  storage.storage_class_rwo: 'true'
+  storage.storage_capacity: '16 Gi'
+reclaimPolicy: Retain
